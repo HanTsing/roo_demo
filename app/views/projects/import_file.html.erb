@@ -1,0 +1,8 @@
+<h2>上传文件</h2>
+<%= render partial: "notice_msg" %>
+<div class="well">
+  <%= form_tag import_projects_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import", :class => "btn btn-primary" %>
+  <% end %>
+</div>

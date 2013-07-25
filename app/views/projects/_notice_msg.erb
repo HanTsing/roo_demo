@@ -1,0 +1,7 @@
+<% if flash[:notice].present? || @notice.present? %>
+  <div class="alert alert-error">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Warning!</strong> <%= flash[:notice]%>
+    <strong>Warning!</strong> <%= @notice %>
+  </div>
+<% end %>

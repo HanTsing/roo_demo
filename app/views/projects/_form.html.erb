@@ -1,0 +1,80 @@
+<%= form_for @project, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label "项目编号", :class => 'control-label' %>
+    <div class="controls">
+      <%= select_tag "people", project_number_options(@project.project_number_id) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "项目名称", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "单位", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :unit, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "单价", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :unit_price, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "至上期累计结算(工程量)", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :prior_project_count, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "至上期累计结算(合价)", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :prior_price, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "本期结算(工程量)", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :current_project_count, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "本期结算(合价)", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :current_price, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "至本期累计结算(工程量)", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :project_count, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "至本期累计结算(合价)", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :project_price, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "备注", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :comment, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "发布状态", :class => 'control-label' %>
+    <div class="controls">
+      <%= select_tag "publish_status", publish_status_options(@project.publish_status) %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                projects_path, :class => 'btn' %>
+  </div>
+<% end %>

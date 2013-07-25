@@ -1,0 +1,30 @@
+<tbody>
+  <% projects && projects.each do |project| %>
+    <tr class=<%= display_class_of_project(project)%>>
+      <td><%= link_to project.id, project_path(project) %></td>
+      <td><%= project.project_number.try(:number) %></td>
+      <td><%= project.name %></td>
+      <td><%= project.unit %></td>
+      <td><%= project.contact_count %></td>
+      <td><%= project.unit_price %></td>
+      <td><%= project.prior_project_count %></td>
+      <td><%= project.prior_price %></td>
+      <td><%= project.current_project_count %></td>
+      <td><%= project.current_price %></td>
+      <td><%= project.project_count %></td>
+      <td><%= project.project_price %></td>
+      <td><%= project.comment %></td>
+      <td><%= project.created_at.to_s(:db) %></td>
+      <td><%= display_publish_status(project)%></td>
+      <td>
+        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          edit_project_path(project), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+            project_path(project),
+            :method => :delete,
+            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+            :class => 'btn btn-mini btn-danger' %>
+          </td>
+    </tr>
+  <% end %>
+</tbody>

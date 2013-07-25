@@ -1,4 +1,12 @@
 Demo::Application.routes.draw do
+
+  resources :projects do
+    collection do
+      get  'import_file'
+      post 'import'
+      post 'search'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

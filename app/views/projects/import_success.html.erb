@@ -1,0 +1,9 @@
+<div class="page-header">
+  <%= render partial: "notice_msg" %>
+  <a href="<%= projects_path %>" class="btn btn-large btn-primary disabled">返回列表页面</a>
+</div>
+<table class="table table-bordered">
+  <%= render partial: "column_title" %>
+  <%= render partial: "projects",   :locals => { projects: @valid_projects } %>
+  <%= render partial: "projects",   :locals => { projects: @invalid_projects } %>
+</table>

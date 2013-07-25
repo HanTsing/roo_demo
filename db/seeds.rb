@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+ProjectNumber.create(number: "1.1.1")
+ProjectNumber.create(number: "1.1.1.1")
+ProjectNumber.create(number: "1.1.1.2")
+ProjectNumber.create(number: "1.1.1.5")
+ProjectNumber.create(number: "2")
+ProjectNumber.create(number: "3")
